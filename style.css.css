@@ -1,0 +1,169 @@
+/* Resume stylesheet */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background: #eef1f4;
+    color: #263238;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+header,
+section {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    background: #ffffff;
+    padding: 28px 36px;
+}
+
+header {
+    border-top: 6px solid #243447;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    color: #243447;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 5px 0;
+    color: #5d6b75;
+}
+
+header a {
+    color: #243447;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    display: none;
+}
+
+section h2 {
+    margin: 0 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #d8dee3;
+    color: #243447;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+section h3 {
+    margin: 18px 0 4px;
+    color: #354b5b;
+    font-size: 15px;
+}
+
+section p {
+    margin: 6px 0;
+}
+
+ul {
+    margin: 8px 0 12px 22px;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+strong {
+    color: #354b5b;
+}
+
+/* Two-column layout for skills and similar content */
+
+section:nth-of-type(7) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+section:nth-of-type(7) h2 {
+    grid-column: 1 / -1;
+}
+
+/* Subtle section hover effect */
+
+section {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(36, 52, 71, 0.08);
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    body {
+        padding: 15px 8px;
+    }
+
+    header,
+    section {
+        padding: 22px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    section:nth-of-type(7) {
+        display: block;
+    }
+}
+
+/* A4 / PDF printing */
+
+@media print {
+    body {
+        padding: 0;
+        background: #ffffff;
+        font-size: 11pt;
+    }
+
+    header,
+    section {
+        max-width: none;
+        margin: 0;
+        padding: 18px 24px;
+        box-shadow: none !important;
+        transform: none !important;
+        break-inside: avoid;
+    }
+
+    header {
+        border-top: 4px solid #243447;
+    }
+
+    section {
+        border-bottom: 1px solid #ddd;
+    }
+
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+}
